@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\title{Bounded $p$-Adic Valuation in Fixed Digit-Multiset Families}
+\author{Jason Stewart}
+\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For a fixed base $b\ge 2$, fix a finite multiset of digits different from $1$ and allow an arbitrary number of additional digits equal to $1$. We prove that, for every prime $p$ dividing $b$, the $p$-adic valuation of the resulting integers is bounded. In base ten and for $p=2$, this proves Conjecture~2 posed by Brier, Clavier, Gutsche, and Naccache in their study of multiplicative persistence. The proof is elementary and uses a finitely branching tree of divisible suffixes. We also record an equivalent compactness proof in $\mathbb{Q}_p$ and clarify the finite computation needed to obtain an exact bound for a particular digit multiset.
+\end{abstract}
+
+\section{Statement}
+Let $b\ge 2$. Every positive integer has a finite base-$b$ expansion with digits in $\{0,1,\dots,b-1\}$. Fix nonnegative integers $m_d$ for $d\in\{2,\dots,b-1\}$, only finitely many of which are nonzero. Let $\mathcal A$ be the family of positive integers whose base-$b$ expansion contains exactly $m_d$ copies of digit $d$ for each $d\ge2$, contains no zero digit, and contains an arbitrary number of copies of digit $1$.
+
+\begin{theorem}\label{thm:main}
+Let $b\ge2$ and let $p$ be a prime divisor of $b$. Then the set
+\[
+\{v_p(n):n\in\mathcal A\}
+\]
+is bounded.
+\end{theorem}
+
+\begin{corollary}
+In decimal notation, fix the number of occurrences of each digit $2,3,\dots,9$ and allow an arbitrary number of digits equal to $1$. Then the exponent of $2$ dividing such integers is bounded.
+\end{corollary}
+
+This is precisely Conjecture~2 of Brier, Clavier, Gutsche, and Naccache, \emph{The Multiplicative Persistence Conjecture Is True for Odd Targets}, arXiv:2110.04263 (2021).
+
+\section{Suffix-tree proof}
+For $b=2$, the family consists of the binary repunits $2^r-1$ with $r\ge1$, all of which are odd, so the theorem is immediate. Hence assume $b\ge3$. Suppose for contradiction that $v_p$ is unbounded on $\mathcal A$.
+
+For each integer $e\ge1$, choose $x\in\mathcal A$ satisfying
+\[
+v_p(x)\ge \left\lceil (e-1)\log_p b\right\rceil+1.
+\]
+Then $x\ge p^{v_p(x)}>b^{e-1}$, so the base-$b$ expansion of $x$ has at least $e$ digits. Moreover, $p\mid b$ implies $\log_p b\ge1$, so the displayed lower bound is at least $e$ and therefore $p^e\mid x$.
+
+Let $y_e$ be the suffix formed by the final $e$ base-$b$ digits of $x$. Since $p\mid b$, we have $p^e\mid b^e$, and therefore
+\[
+y_e\equiv x\pmod{b^e}
+\qquad\Longrightarrow\qquad
+p^e\mid y_e.
+\]
+The suffix contains no zero digit and uses each digit $d\ge2$ at most $m_d$ times.
+
+Construct a rooted tree as follows. A vertex at depth $e$ is an $e$-digit, zero-free base-$b$ string that uses each digit $d\ge2$ at most $m_d$ times and whose numerical value is divisible by $p^e$. The parent of a depth-$(e+1)$ vertex is obtained by deleting its most significant digit.
+
+This is well-defined. If
+\[
+y_{e+1}=a_e b^e+y_e
+\]
+and $p^{e+1}\mid y_{e+1}$, then $p^e\mid a_e b^e$, since $p\mid b$, and hence $p^e\mid y_e$. Adjoin an empty root at depth $0$. Parent closure shows that every vertex is connected to this root. The tree is finitely branching, and the preceding construction supplies a vertex at every positive depth. By K\"onig's lemma, it has an infinite branch.
+
+Along this branch, each digit $d\ge2$ can appear at most $m_d$ times. Hence there is an index $N$ beyond which every digit is $1$. Let $A_N$ denote the integer represented by the first $N$ digits of the branch, counted from the least significant end. For every $e>N$, the depth-$e$ suffix is
+\[
+y_e=A_N+\sum_{j=N}^{e-1}b^j
+=A_N+\frac{b^e-b^N}{b-1}.
+\]
+Since $p^e\mid y_e$ and $p^e\mid b^e$, multiplication by $b-1$ gives
+\[
+p^e\mid (b-1)A_N-b^N
+\]
+for arbitrarily large $e$. The fixed integer $(b-1)A_N-b^N$ must therefore be zero. But reducing
+\[
+(b-1)A_N=b^N
+\]
+modulo $b-1$ yields $0\equiv1\pmod{b-1}$, impossible because $b\ge3$. This contradiction proves Theorem~\ref{thm:main}. \qed
+
+\section{Equivalent $p$-adic compactness proof}
+Assume $b\ge3$, since the base-$2$ case was handled separately above. Suppose again that the valuations are unbounded. Choose $x_k\in\mathcal A$ with $v_p(x_k)\to\infty$. Their base-$b$ lengths necessarily tend to infinity because $x_k\ge p^{v_p(x_k)}$. Thus $x_k\to0$ in $\mathbb Q_p$.
+
+Read digits from right to left. By diagonal subsequence selection, pass to a subsequence for which every fixed digit position eventually stabilizes. Write the limiting digits as $a_0,a_1,\dots$. The fixed non-1 digit budget implies $a_j=1$ for all sufficiently large $j$. Because $p\mid b$, the series
+\[
+L=\sum_{j=0}^{\infty}a_jb^j
+\]
+converges in $\mathbb Q_p$. To justify the limiting step explicitly, fix $r\ge1$ and choose $J$ such that $p^r\mid b^J$. For all sufficiently large $k$, the first $J$ digits of $x_k$ agree with $a_0,\dots,a_{J-1}$ and the length of $x_k$ exceeds $J$. Therefore $x_k-L\in b^J\mathbb Z_p\subseteq p^r\mathbb Z_p$. Hence $x_k\to L$, and uniqueness of limits gives $L=0$.
+
+For $N$ beyond the last non-1 limiting digit,
+\[
+0=L=A_N+\sum_{j=N}^{\infty}b^j
+=A_N-\frac{b^N}{b-1},
+\]
+where the geometric-series identity is valid $p$-adically; indeed $p\nmid(b-1)$, so $b-1$ is a unit in $\mathbb Z_p$. Therefore $(b-1)A_N=b^N$, contradicting reduction modulo $b-1$ as above.
+
+\section{Effective finite verification}
+The theorem is qualitative: it guarantees that a bound exists but does not provide a uniform closed formula for the smallest bound. For a fixed digit multiset, an exact bound can be certified by finite enumeration.
+
+For a positive integer $e$, let $B_e$ be the set of all $e$-digit, zero-free base-$b$ integers using each digit $d\ge2$ at most $m_d$ times. If no member of $B_e$ is divisible by $p^e$, then every member of $\mathcal A$ having at least $e$ digits has valuation at most $e-1$. To obtain the exact maximum over $\mathcal A$, one must also enumerate the members of $\mathcal A$ having fewer than $e$ digits.
+
+This last short-number check is essential. An empty $B_e$ alone does not imply that $e-1$ is the exact maximum over the full family. For the decimal multiset $\{4,4,7\}$, $B_7$ is empty, while the six-digit integer
+\[
+111744=873\cdot2^7
+\]
+has valuation $7$. The full finite certificate first succeeds at level $8$ when the shorter exact-family members are included.
+
+\section{Scope and limitations}
+The proof requires $p\mid b$ so that deleting a leading suffix digit preserves divisibility by $p^e$. For $b\ge3$, the final contradiction uses reduction modulo $b-1$. In base $2$ that congruence is vacuous, but the theorem is trivial because the allowed positive integers are binary repunits and have $2$-adic valuation zero.
+
+The result does not prove that decimal multiplicative persistence is at most $11$. It removes one structural obstruction identified in the even-target analysis: for every fixed digit multiset, the relevant power of $2$ is finite. Turning this qualitative fact into a practical global persistence bound remains a separate problem.
+
+\section*{Acknowledgment and verification}
+The accompanying repository contains two independent Python implementations, versioned JSON certificates, and a standalone Rust verifier for representative decimal cases. These computations support the finite examples but are not used in the proof of Theorem~\ref{thm:main}.
+
+\begin{thebibliography}{9}
+\bibitem{BCGN}
+E. Brier, C. Clavier, L. Gutsche, and D. Naccache,
+\emph{The Multiplicative Persistence Conjecture Is True for Odd Targets},
+arXiv:2110.04263, 2021.
+
+\bibitem{dFT}
+E. de Faria and C. Tresser,
+\emph{On Sloane's Persistence Problem},
+Experimental Mathematics 23 (2014), 363--382.
+
+\bibitem{Sloane}
+N. J. A. Sloane,
+\emph{The Persistence of a Number},
+Journal of Recreational Mathematics 6 (1973), 97--98.
+\end{thebibliography}
+\end{document}

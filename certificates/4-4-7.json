@@ -1,0 +1,32 @@
+{
+  "base": 10,
+  "certificate_sha256": "7a8b34bc35d5792ae6e659a0896afcb4b53d9a46eabff9e75c13129e29c0d741",
+  "counts": {
+    "empty_level_candidates": 183,
+    "short_exact_family_candidates": 105
+  },
+  "digests": {
+    "empty_level_candidates_sha256": "0cb42e66ace0713107aa676b4e254c31e6c079b796462447388c873fabe7c166",
+    "short_exact_family_sha256": "9d765553fb21d4a8c2ea1ecb216cff06ae08bc6f335bf26a5939c26cbe495290"
+  },
+  "digit_limits": [
+    [
+      4,
+      2
+    ],
+    [
+      7,
+      1
+    ]
+  ],
+  "first_empty_suffix_level": 7,
+  "generator": {
+    "name": "mp-lab Python reference generator",
+    "version": 1
+  },
+  "maximizing_witness": 111744,
+  "maximum_valuation": 7,
+  "prime": 2,
+  "prior_level_witness": 111744,
+  "schema": "mp-lab.fixed-digit-valuation.v1"
+}

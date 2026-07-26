@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript and software release."
+title: "Bounded valuation in fixed digit-multiset families"
+type: software
+authors:
+  - family-names: Stewart
+    given-names: Jason
+repository-code: "https://github.com/00028ECB/multiplicative-persistence-bounded-valuation"
+version: "0.1.0"
+date-released: "2026-07-25"
+license: MIT
+keywords:
+  - multiplicative persistence
+  - p-adic valuation
+  - digit-restricted integers
+  - certificate verification
+preferred-citation:
+  type: article
+  title: "Bounded p-Adic Valuation in Fixed Digit-Multiset Families"
+  authors:
+    - family-names: Stewart
+      given-names: Jason
+  year: 2026
+  notes: "Preprint in preparation; update this record with a DOI or arXiv identifier when available."
