@@ -4,7 +4,9 @@ This repository accompanies a short note proving a bounded-valuation theorem for
 
 ## Main theorem
 
-Fix a base `b >= 2`, a prime `p` dividing `b`, and a finite multiset of digits from `2` through `b - 1`. Consider positive base-`b` integers containing exactly those non-1 digits, no zero digits, and any number of additional digits equal to `1`. Then their `p`-adic valuations are bounded.
+Fix a base `b >= 3`, a prime `p` dividing `b`, and a finite multiset of digits from `2` through `b - 1`. Consider positive base-`b` integers containing exactly those non-1 digits, no zero digits, and any number of additional digits equal to `1`. Then their `p`-adic valuations are bounded.
+
+The excluded base-2 case is immediate: every permitted number is a binary repunit, hence odd, so its 2-adic valuation is zero.
 
 For `b = 10` and `p = 2`, this proves Conjecture 2 posed by Brier, Clavier, Gutsche, and Naccache in *The Multiplicative Persistence Conjecture Is True for Odd Targets* (2021).
 
