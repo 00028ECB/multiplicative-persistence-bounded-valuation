@@ -36,13 +36,21 @@ Yes after adjoining the empty root. Each vertex has at most `b-1` children, pare
 
 Not along a single branch. Each exceptional digit has a fixed total budget. Hence only finitely many branch coordinates can differ from 1, even though exceptional digits may drift to higher positions across a sequence before the diagonal subsequence is selected.
 
-### 6. Does the final divisibility calculation have the correct sign?
+### 6. Does the final divisibility calculation have the correct sign and orientation?
 
-Yes. From
+Yes. Branch coordinates are indexed from the least-significant end. A depth-`e` node occupies positions `0` through `e-1`, and passing to depth `e+1` prepends one new digit in position `e`:
 
-`y_e = A_N + (b^e - b^N)/(b-1)`
+`y_(e+1) = a_e b^e + y_e`.
 
-we obtain
+Once `e >= N`, every newly prepended digit is `1`, so
+
+`y_(e+1) = y_e + b^e`.
+
+Iterating from depth `N` to depth `e` gives
+
+`y_e = A_N + sum_(j=N)^(e-1) b^j = A_N + (b^e - b^N)/(b-1)`.
+
+Therefore
 
 `(b-1)y_e = (b-1)A_N + b^e - b^N`.
 
