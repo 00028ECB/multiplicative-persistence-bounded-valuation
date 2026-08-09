@@ -48,7 +48,7 @@ A standard TeX Live installation with `pdflatex` is sufficient:
 cd paper
 pdflatex bounded-valuation-note.tex
 pdflatex bounded-valuation-note.tex
-cd..
+cd ..
 ```
 
 LaTeX intermediate files and generated PDFs should not be committed to source control. A versioned PDF may be attached to a GitHub release or deposited with the preprint.
