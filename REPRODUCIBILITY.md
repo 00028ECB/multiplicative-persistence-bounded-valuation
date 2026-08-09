@@ -1,6 +1,6 @@
 # Reproducibility guide
 
-The public snapshot is intended to be verifiable from a fresh clone without access to the private research lab.
+The curated snapshot is intended to be verifiable from a fresh clone without access to the private research lab..
 
 ## Python verification
 
