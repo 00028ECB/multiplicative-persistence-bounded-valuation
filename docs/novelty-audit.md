@@ -1,3 +1,7 @@
+# Historical status
+
+**Update — September 1, 2026.** This audit predates Patrick Nyadjo Fonga's arXiv preprint 2608.27802, which independently proves the bounded-valuation conjecture and obtains stronger quantitative results. The material below is retained only as a record of the literature search conducted before that preprint appeared; any earlier conclusion that no proof had been located is no longer current.
+
 # Novelty audit
 
 **Search date:** 2026-07-20 (America/Phoenix)  
@@ -79,7 +83,7 @@ None of these supplies the theorem or the suffix-tree argument found here.
 - Eric Brier's paper address is a Polytechnique alumni address.
 - Linda Gutsche's paper address was not independently confirmed on a current public institutional page.
 
-## Remaining checks before a public priority claim
+## Historical remaining checks as of July 20, 2026
 
 1. Send the private note to the four original authors and ask directly about flaws and prior art.
 2. Ask an independent number theorist to search MathSciNet and zbMATH from institutional access.
@@ -89,4 +93,4 @@ None of these supplies the theorem or the suffix-tree argument found here.
 
 ## Safe current wording
 
-> We give an elementary proof of a conjecture stated in a 2021 preprint. A targeted literature search has not located an earlier proof, but novelty and priority have not yet been independently confirmed.
+> Historical note: as of July 20, 2026, a targeted literature search had not located an earlier proof. This statement is superseded by the September 1, 2026 update above.

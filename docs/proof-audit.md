@@ -94,4 +94,4 @@ The remaining risk is not an identified mathematical defect. It is novelty and p
 
 ## Recommended claim language
 
-> We give an elementary proof of a conjecture stated in a 2021 preprint. We have not located an earlier proof after a targeted literature and citation search, but priority and novelty remain subject to confirmation by the original authors and independent experts.
+> We give two short qualitative proofs of the bounded-valuation statement arising as Conjecture 2 in the 2021 preprint. Fonga gives a quantitative proof of the conjecture, with explicit bounds and an effective finite method.

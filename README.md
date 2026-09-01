@@ -1,6 +1,14 @@
-# Bounded valuation in fixed digit-multiset families
+# Two Short Proofs of a Bounded-Valuation Theorem in Multiplicative Persistence
 
-This repository accompanies a short note proving a bounded-valuation theorem for integers with a fixed multiset of non-1 digits and arbitrarily many additional 1s.
+This repository preserves two short qualitative proofs of a bounded-valuation theorem for integers with a fixed multiset of non-1 digits and arbitrarily many additional 1s, together with reproducible finite verification developed alongside the proofs.
+
+## Current status
+
+For decimal base and `p = 2`, the theorem gives the qualitative boundedness assertion posed as Conjecture 2 by Brier, Clavier, Gutsche, and Naccache in *The Multiplicative Persistence Conjecture Is True for Odd Targets* (2021).
+
+Patrick Nyadjo Fonga gives a quantitative proof of the conjecture in arXiv:2608.27802, obtaining explicit bounds and an effective finite method for the even-target persistence program. The proofs preserved here are different: a finitely branching divisible-suffix argument using König's lemma and an equivalent `p`-adic compactness argument.
+
+The computational code and certificates in this repository are retained as reproducibility material for the finite experiments; they are not needed for the qualitative proofs.
 
 ## Main theorem
 
@@ -8,22 +16,16 @@ Fix a base `b >= 2`, a prime `p` dividing `b`, and a finite multiset of digits f
 
 For b = 2, the set of digits from 2 through b - 1 is empty, so the fixed multiset is necessarily empty. The family therefore consists only of binary repunits, all of which are odd. The substantive argument treats b >= 3.
 
-For `b = 10` and `p = 2`, this proves Conjecture 2 posed by Brier, Clavier, Gutsche, and Naccache in *The Multiplicative Persistence Conjecture Is True for Odd Targets* (2021).
-
-The proof is qualitative and does **not** prove that decimal multiplicative persistence is at most 11.
-
-## Status
-
-The argument has undergone repeated internal adversarial review and has been sent privately to the authors of the 2021 paper for comment. It has not yet been peer reviewed. A targeted literature search has not located an earlier proof, but novelty has not been independently confirmed.
+The theorem is qualitative. It does **not** provide the effective cutoff required by the even-target persistence search, and it does **not** prove that decimal multiplicative persistence is at most 11. Fonga's quantitative result supplies the former ingredient.
 
 ## Contents
 
-- `paper/bounded-valuation-note.tex` — reviewed theorem note;
+- `paper/bounded-valuation-note.tex` — short theorem note containing the suffix-tree and `p`-adic compactness proofs;
 - `src/mp_lab/` — Python reference search and independent checker;
 - `certificates/` — versioned exact finite certificates;
 - `rust-verifier/` — standalone Rust certificate verifier;
 - `tests/` — Python cross-check and tamper tests;
-- `docs/` — proof audit, certificate format, and novelty audit.
+- `docs/` — proof audit, certificate format, and historical novelty audit.
 
 ## Quick verification
 
@@ -60,11 +62,11 @@ cargo run --release --manifest-path rust-verifier/Cargo.toml -- certificates/*.j
 | `4,4,7` | 7 | `111744` |
 | `2,7,8` | 9 | `1178112` |
 
-The computations support these finite examples. The theorem itself does not depend on computation.
+These computations certify the listed finite examples. They are independent of the qualitative theorem proofs.
 
 ## Reproducibility and citation
 
-See `REPRODUCIBILITY.md`, `CITATION.cff`, and `AI_USE.md` in the curated release.
+See `REPRODUCIBILITY.md`, `CITATION.cff`, and `AI_USE.md`.
 
 ## Licensing
 

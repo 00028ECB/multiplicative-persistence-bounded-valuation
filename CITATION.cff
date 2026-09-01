@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "Please cite the accompanying manuscript and software release."
-title: "Bounded valuation in fixed digit-multiset families"
+title: "Two Short Proofs of a Bounded-Valuation Theorem in Multiplicative Persistence"
 type: software
 authors:
   - family-names: Stewart
     given-names: Jason
 repository-code: "https://github.com/00028ECB/multiplicative-persistence-bounded-valuation"
 version: "0.1.0"
-date-released: "2026-07-25"
+date-released: "2026-09-01"
 license: MIT
 keywords:
   - multiplicative persistence
@@ -16,9 +16,8 @@ keywords:
   - certificate verification
 preferred-citation:
   type: article
-  title: "Bounded p-Adic Valuation in Fixed Digit-Multiset Families"
+  title: "Two Short Proofs of a Bounded-Valuation Theorem in Multiplicative Persistence"
   authors:
     - family-names: Stewart
       given-names: Jason
   year: 2026
-  notes: "Preprint in preparation; update this record with a DOI or arXiv identifier when available."
