@@ -28,4 +28,5 @@ rust-verifier/target/
 *.log
 *.out
 *.pdf
+!docs/bounded-valuation-note.pdf
 *.synctex.gz
